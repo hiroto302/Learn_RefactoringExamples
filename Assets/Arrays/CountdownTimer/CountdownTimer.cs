@@ -6,18 +6,18 @@ using UnityEngine.UI;
 namespace CountdownTimer {
 
     /*
-     * 
+     *
      * This is a simple approach to showing a countdown timer. It is able to
-     * show 3... 2... 1... GO! at 1-second intervals when it is attached to 
+     * show 3... 2... 1... GO! at 1-second intervals when it is attached to
      * a game object with a Text component.
-     * 
+     *
      * Like every solution you might come up with, it has advantages and
      * disadvantages.
      * Advantages:
      *      WORKS
      *      Relatively easy to write
      *      Reasonably clear what it's doing and how
-     * 
+     *
      * Disadvantages:
      *      Could be clearer; looks like it's counting in the opposite
      *          direction of what it's actually doing

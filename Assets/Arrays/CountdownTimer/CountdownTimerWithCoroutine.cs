@@ -10,23 +10,23 @@ namespace CountdownTimer {
      * time interval, using a code structure called coroutines. Coroutines
      * are powerful but not very beginner-friendly. This is a nice simple
      * working example when you are ready to learn about them.
-     * 
+     *
      * Coroutines only run when they're needed, rather than every frame like
      * things you do in Update.
-     * 
+     *
      * Extra stuff in your Update methods can make your game run more slowly.
      * Coroutines can help you speed things up. But beginners should not worry about
      * optimization – your goal is working, legible code.
-     * 
+     *
      * Advantages:
      *      A little faster
      *      Doesn't clutter up Update method
-     * 
+     *
      * Disadvantages:
      *      Much harder to write
      *      Much harder to read, unless you are familiar with coroutines
      *      More bug-prone because it's harder to read
-     * 
+     *
      */
 
     public class CountdownTimerWithCoroutine : MonoBehaviour {
@@ -37,7 +37,7 @@ namespace CountdownTimer {
         int currentStageIndex = 0;
         bool keepRunningCountdown = true;
 
-        Coroutine updateText;
+        Coroutine updateText;  // コルーチンクラスの変数
 
         void Start() {
             textComponent = gameObject.GetComponent<Text>();
@@ -48,6 +48,7 @@ namespace CountdownTimer {
             //this code pauses the timer. Can you figure out how to
             //restart it at "5..."?
             if (Input.GetKeyDown(KeyCode.Space)) {
+                // １. 初期値は true. なので、１度目にSpaceKeyを入力すると false が代入される
                 keepRunningCountdown = !keepRunningCountdown;
                 if (keepRunningCountdown) {
                     StartCoroutine(UpdateText());
@@ -56,15 +57,17 @@ namespace CountdownTimer {
         }
 
         IEnumerator UpdateText() {
+            // 2. 上記でスペースキーを入力すると false or true に切り替わる。その結果、timer を pauses させることができる。
             while (keepRunningCountdown) {
 
                 //this line is what creates the pause between each number.
                 //using "yield return" is also why this function needs to have
                 //the special IEnumerator return type.
+                // この記述より下記にある処理を１秒後 に処理する
                 yield return new WaitForSeconds(howManySecondsToShowText);
 
                 //Everything after WaitForSeconds doesn't happen until the
-                //delay is over, that is, the game has waited for 
+                //delay is over, that is, the game has waited for
                 //howManySecondsToShowText seconds.
                 currentStageIndex++;
                 if (currentStageIndex >= countdownStages.Length) {
