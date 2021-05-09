@@ -3,24 +3,25 @@ using System.Collections;
 
 namespace GodClass.Refactored {
 
-    /* When you're trying to divide responsibilities among your different
-     * C# classes, one common technique is to isolate anything that instantiates
-     * stuff and call it a [Whatever]Factory. As you can see, the code
-     * for spawning stuff can get quite complicated, and it's a common
-     * source of problems - it's best if you know exactly where to look when
-     * something goes wrong.
-     * 
-     * This example is somewhat complicated because it's using coroutines and
-     * randomly selecting a direction. Not all factories are this complex. But 
-     * you'll often want to set up a Factory class even if your spawning
-     * code starts off simple, because you can be pretty sure it will grow over time.
-     * 
-     * Factory is an example of a _design pattern_, which is an abstract pattern
-     * for setting up your code. There are many others that developers have identified
-     * over many years; some are specific to games and some (like this one) are more
-     * general-purpose. When you feel reasonably comfortable writing code, design
-     * patterns are the next big step you can take to become a better engineer. See the
-     * resources in this unit for some places to get started, or just look online.
+    /*
+    When you're trying to divide responsibilities among your different
+    C# classes, one common technique is to isolate anything that instantiates
+    stuff and call it a [Whatever]Factory. As you can see, the code
+    for spawning stuff can get quite complicated, and it's a common
+    source of problems - it's best if you know exactly where to look when
+    something goes wrong.
+
+    This example is somewhat complicated because it's using coroutines and
+    randomly selecting a direction. Not all factories are this complex. But
+    you'll often want to set up a Factory class even if your spawning
+    code starts off simple, because you can be pretty sure it will grow over time.
+
+    Factory is an example of a _design pattern_, which is an abstract pattern
+    for setting up your code. There are many others that developers have identified
+    over many years; some are specific to games and some (like this one) are more
+    general-purpose. When you feel reasonably comfortable writing code, design
+    patterns are the next big step you can take to become a better engineer. See the
+    resources in this unit for some places to get started, or just look online.
      */
 
     public class MeteorFactory : MonoBehaviour {
